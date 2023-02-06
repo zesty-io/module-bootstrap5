@@ -1,0 +1,129 @@
+
+  - referenceName: "primary-color"
+    name: "Primary Color"
+    sort: 1
+    type: "color"
+    value: "#0d6efd"
+    description: "A theme color with a class name: primary e.g(text-primary,bg-primary)"
+    category: 1
+    options: null
+  - referenceName: "headings-color"
+    name: "Header Color"
+    sort: 1
+    type: "dropdown"
+    value: "primary-color"
+    description: "Colors of all headers from h1 to h6 "
+    category: 2
+    options: "{\"danger-color\":\"danger-color\",\"dark-color\":\"dark-color\",\"info-color\":\"info-color\",\"light-color\":\"light-color\",\"primary-color\":\"primary-color\",\"secondary-color\":\"secondary-color\",\"success-color\":\"success-color\",\"warning-color\":\"warning-color\"}"
+  - referenceName: "link-color"
+    name: "Link Color"
+    sort: 1
+    type: "dropdown"
+    value: "primary-color"
+    description: "Color of every link in the page"
+    category: 3
+    options: "{\"danger-color\":\"danger-color\",\"dark-color\":\"dark-color\",\"info-color\":\"info-color\",\"light-color\":\"light-color\",\"primary-color\":\"primary-color\",\"secondary-color\":\"secondary-color\",\"success-color\":\"success-color\",\"warning-color\":\"warning-color\"}"
+  - referenceName: "secondary-color"
+    name: "Secondary Color"
+    sort: 2
+    type: "color"
+    value: "#6c757d"
+    description: "A theme color with a class name: secondary e.g(text-secondary,bg-secondary)"
+    category: 1
+    options: null
+  - referenceName: "font-size-base"
+    name: "Font Size Base"
+    sort: 2
+    type: "text"
+    value: "1rem"
+    description: "Base font size of all text in every web page of the instance"
+    category: 2
+    options: null
+  - referenceName: "link-hover-color"
+    name: "Link Hover Color"
+    sort: 2
+    type: "dropdown"
+    value: "info-color"
+    description: "Color of the link when mouse is hovered"
+    category: 3
+    options: "{\"danger-color\":\"danger-color\",\"dark-color\":\"dark-color\",\"info-color\":\"info-color\",\"light-color\":\"light-color\",\"primary-color\":\"primary-color\",\"secondary-color\":\"secondary-color\",\"success-color\":\"success-color\",\"warning-color\":\"warning-color\"}"
+  - referenceName: "font-weight-base"
+    name: "Font Weight Base"
+    sort: 2
+    type: "text"
+    value: "400"
+    description: "Base font weight of all text, the higher value the more thicker of the text"
+    category: 2
+    options: null
+  - referenceName: "success-color"
+    name: "Secondary Color"
+    sort: 3
+    type: "color"
+    value: "#198754"
+    description: "A theme color with a class name: success e.g(text-success,bg-success)"
+    category: 1
+    options: null
+  - referenceName: "link-visited-color"
+    name: "Link Visited Color"
+    sort: 3
+    type: "dropdown"
+    value: "info-color"
+    description: "Color of the link when its already visited"
+    category: 3
+    options: "{\"danger-color\":\"danger-color\",\"dark-color\":\"dark-color\",\"info-color\":\"info-color\",\"light-color\":\"light-color\",\"primary-color\":\"primary-color\",\"secondary-color\":\"secondary-color\",\"success-color\":\"success-color\",\"warning-color\":\"warning-color\"}"
+  - referenceName: "font-family-base"
+    name: "Font Family Base"
+    sort: 3
+    type: "font_picker"
+    value: "sans-serif"
+    description: "Base font style of all text"
+    category: 2
+    options: null
+  - referenceName: "info-color"
+    name: "Info Color"
+    sort: 4
+    type: "color"
+    value: "#0dcaf0"
+    description: "A theme color with a class name: info e.g(text-info,bg-info)"
+    category: 1
+    options: null
+  - referenceName: "link-active-color"
+    name: "Link Active Color"
+    sort: 4
+    type: "dropdown"
+    value: "info-color"
+    description: "Color of the link when its being clicked"
+    category: 3
+    options: "{\"danger-color\":\"danger-color\",\"dark-color\":\"dark-color\",\"info-color\":\"info-color\",\"light-color\":\"light-color\",\"primary-color\":\"primary-color\",\"secondary-color\":\"secondary-color\",\"success-color\":\"success-color\",\"warning-color\":\"warning-color\"}"
+  - referenceName: "warning-color"
+    name: "Warning Color"
+    sort: 5
+    type: "color"
+    value: "#ffc107"
+    description: "A theme color with a class name: warning e.g(text-warning,bg-warning)"
+    category: 1
+    options: null
+  - referenceName: "danger-color"
+    name: "Danger Color"
+    sort: 6
+    type: "color"
+    value: "#dc3545"
+    description: "A theme color with a class name: danger e.g(text-danger,bg-danger)"
+    category: 1
+    options: null
+  - referenceName: "light-color"
+    name: "Light Color"
+    sort: 7
+    type: "color"
+    value: "#f8f9fa"
+    description: "A theme color with a class name: light e.g(text-light,bg-light)"
+    category: 1
+    options: null
+  - referenceName: "dark-color"
+    name: "Dark Color"
+    sort: 8
+    type: "color"
+    value: "#212529 "
+    description: "A theme color with a class name: dark e.g(text-dark,bg-dark)"
+    category: 1
+    options: null

@@ -1,0 +1,5 @@
+{
+  "name": "bootstrap-style-variables",
+  "head-tags": "head-tags.yaml",
+  "style-variables": "style-variables.yaml"
+}
