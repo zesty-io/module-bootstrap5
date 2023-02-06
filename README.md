@@ -1,2 +1,2 @@
 # module-bootstrap5
-Module Bootstrap 5 Framework
+Module Bootstrap 5 Frameworks
