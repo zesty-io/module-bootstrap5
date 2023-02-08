@@ -15,9 +15,8 @@ Aside from creating awesome content, this module allows users to customize basic
 📝Some of the styling section may be [empty](https://user-images.githubusercontent.com/55866499/217271136-dafc9539-c807-4dc5-af81-30b0381f58e5.png), you may also add your own style variable settings using [Instance API](https://instances-api.zesty.org/#e90fa093-5d07-4ddb-a854-e1ec15701f47)
 
 ### Body Colors and Spacing
-> The bootstrap theme colors below can be customized in this section: 
-
-`Primary` `Secondary` `Success` `Info` `Warning` `Danger` `Light` `Dark`
+> The bootstrap theme colors can be customized in this section: 
+`Primary` `Secondary` `Light` `Dark` and we have additional color field such as `Accent1` `Accent2` which is also can be used for modules with **PICO CSS** framework
 
 <img src="https://user-images.githubusercontent.com/55866499/217267661-e4d32bd6-e63f-45f6-9eb0-c90ad779a8de.png" width="100%" height="400">
  
