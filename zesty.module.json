@@ -1,5 +1,5 @@
 {
-  "name": "bootstrap-style-variables",
+  "name": "Module Bootstrap5",
   "head-tags": "head-tags.yaml",
   "style-variables": "style-variables.yaml"
 }
