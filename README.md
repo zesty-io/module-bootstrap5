@@ -1,20 +1,27 @@
 # module-bootstrap5
 
-This module is meant for <img src="https://brand.zesty.io/zesty-io-logo.svg" style="margin-left:10px" width="15" height="15" alr="Zesty Logo"> Zesty's modules
-that is using <img src="https://user-images.githubusercontent.com/55866499/217280250-1392ec17-2d71-4f8b-ae17-6a782a992b43.png" style="margin-left:10px" width="15" height="15" alr="Zesty Logo"> Bootstrap framework. Because it allows users to customize basic bootstrap default stylings such as: **Basic Font Stylings**, **Headers**, **Hyperlinks** and **Theme Colors**.
+ _Why install this module?_
+>This module is required to be installed in every <img src="https://brand.zesty.io/zesty-io-logo.svg" style="margin-left:10px" width="15" height="15" alr="Zesty Logo"> **Zesty modules** that is dependent on the <img src="https://user-images.githubusercontent.com/55866499/217280250-1392ec17-2d71-4f8b-ae17-6a782a992b43.png" style="margin-left:10px" width="15" height="15" alr="Zesty Logo"> **Bootstrap framework** in order for the stylings to work. Aside from creating awesome content, it allows users to customize basic bootstrap default stylings such as: **Basic Font Stylings**, **Headers**, **Hyperlinks** and **Theme Colors**.
+
 
 > **Warning**: Installing this module may affect existing content models that are using bootstrap stylings. Since the default bootstrap files will automatically be installed in the instance.
 
+<br>
+
+_How to customize bootstrap default stylings? Where to go?_
 > In the **Zesty Instance Manager**, click **Settings** and choose under **WebEngine Styles & Fonts**
 
 <img src="https://user-images.githubusercontent.com/55866499/217253593-51bdb961-5466-4d8d-85a2-56e113b393c5.png" width="25%" height="300">
 <br>
 
-📝Some of the styling section may be [empty](https://user-images.githubusercontent.com/55866499/217271136-dafc9539-c807-4dc5-af81-30b0381f58e5.png), you may also add your own **"Style Variable"** settings using [Instance API](https://instances-api.zesty.org/#e90fa093-5d07-4ddb-a854-e1ec15701f47).
+📝Some of the sections may be [empty](https://user-images.githubusercontent.com/55866499/217271136-dafc9539-c807-4dc5-af81-30b0381f58e5.png), but you can add your own **"Style Variable"** settings using [Instance API](https://instances-api.zesty.org/#e90fa093-5d07-4ddb-a854-e1ec15701f47).
 
-What is Style Variables?
+_What is Style Variables?_
 > This variables are used as reference in the stylesheets which allows users to change the styles of the web page dynamically. Click [here](https://zesty.org/services/manager-ui/settings/less-variables#what-are-style-variables) to know more about Style Variables.
 
+<br>
+
+_What are the current available sections?_
 ### 1. Body Colors & Spacing
 > The bootstrap theme colors:`Primary` `Secondary` `Light` `Dark` can be customized in this section using Color Picker. Color such as: `Accent1` `Accent2` are the style variables for Theme Colors **Success** and **Info**
 

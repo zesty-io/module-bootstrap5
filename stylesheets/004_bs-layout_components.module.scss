@@ -53,9 +53,7 @@
   // stylelint-enable custom-property-empty-line-before
 }
 
-
 // stylelint-disable declaration-no-important, selector-no-qualifying-type, property-no-vendor-prefix
-
 
 // Reboot
 //
@@ -63,7 +61,6 @@
 // styles targeting irrelevant browsers while applying new styles.
 //
 // Normalize is licensed MIT. https://github.com/necolas/normalize.css
-
 
 // Document
 //
@@ -74,7 +71,6 @@
 *::after {
   box-sizing: border-box;
 }
-
 
 // Root
 //
@@ -92,7 +88,6 @@
     }
   }
 }
-
 
 // Body
 //
@@ -116,7 +111,6 @@ body {
 }
 // scss-docs-end reboot-body-rules
 
-
 // Content grouping
 //
 // 1. Reset Firefox's gray color
@@ -134,7 +128,6 @@ hr:not([size]) {
   height: $hr-height; // 2
 }
 
-
 // Typography
 //
 // 1. Remove top margins from headings
@@ -148,7 +141,7 @@ hr:not([size]) {
   font-style: $headings-font-style;
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
-  color: $headings-color;
+  color: map-get($theme-colors, $headings-color);
 }
 
 h1 {
@@ -181,7 +174,6 @@ h6 {
   @include font-size($h6-font-size);
 }
 
-
 // Reset margins on paragraphs
 //
 // Similarly, the top margin on `<p>`s get reset. However, we also reset the
@@ -192,7 +184,6 @@ p {
   margin-bottom: $paragraph-margin-bottom;
 }
 
-
 // Abbreviations
 //
 // 1. Duplicate behavior to the data-bs-* attribute for our tooltip plugin
@@ -201,12 +192,12 @@ p {
 // 4. Prevent the text-decoration to be skipped.
 
 abbr[title],
-abbr[data-bs-original-title] { // 1
+abbr[data-bs-original-title] {
+  // 1
   text-decoration: underline dotted; // 2
   cursor: help; // 3
   text-decoration-skip-ink: none; // 4
 }
-
 
 // Address
 
@@ -215,7 +206,6 @@ address {
   font-style: normal;
   line-height: inherit;
 }
-
 
 // Lists
 
@@ -245,17 +235,15 @@ dt {
 // 1. Undo browser default
 
 dd {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   margin-left: 0; // 1
 }
-
 
 // Blockquote
 
 blockquote {
   margin: 0 0 1rem;
 }
-
 
 // Strong
 //
@@ -266,7 +254,6 @@ strong {
   font-weight: $font-weight-bolder;
 }
 
-
 // Small
 //
 // Add the correct font size in all browsers
@@ -275,14 +262,12 @@ small {
   @include font-size($small-font-size);
 }
 
-
 // Mark
 
 mark {
   padding: $mark-padding;
   background-color: $mark-bg;
 }
-
 
 // Sub and Sup
 //
@@ -297,9 +282,12 @@ sup {
   vertical-align: baseline;
 }
 
-sub { bottom: -.25em; }
-sup { top: -.5em; }
-
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
 
 // Links
 
@@ -325,7 +313,6 @@ a:not([href]):not([class]) {
     text-decoration: none;
   }
 }
-
 
 // Code
 
@@ -384,7 +371,6 @@ kbd {
   }
 }
 
-
 // Figures
 //
 // Apply a consistent margin strategy (matches our type styles).
@@ -393,14 +379,12 @@ figure {
   margin: 0 0 1rem;
 }
 
-
 // Images and content
 
 img,
 svg {
   vertical-align: middle;
 }
-
 
 // Tables
 //
@@ -438,7 +422,6 @@ th {
   border-style: solid;
   border-width: 0;
 }
-
 
 // Forms
 //
@@ -626,7 +609,6 @@ legend {
   padding: 0;
 }
 
-
 // Inherit font family and line height for file input buttons
 
 ::file-selector-button {
@@ -662,7 +644,6 @@ summary {
   cursor: pointer;
 }
 
-
 // Progress
 //
 // Add the correct vertical alignment in Chrome, Firefox, and Opera.
@@ -671,7 +652,6 @@ progress {
   vertical-align: baseline;
 }
 
-
 // Hidden attribute
 //
 // Always hide an element with the `hidden` HTML attribute.
@@ -679,7 +659,6 @@ progress {
 [hidden] {
   display: none !important;
 }
-
 
 //
 // Headings
@@ -707,7 +686,6 @@ progress {
 .h6 {
   @extend h6;
 }
-
 
 .lead {
   @include font-size($lead-font-size);
@@ -754,7 +732,6 @@ progress {
   }
 }
 
-
 //
 // Misc
 //
@@ -786,7 +763,6 @@ progress {
   }
 }
 
-
 // Responsive images (ensure images don't scale beyond their parents)
 //
 // This is purposefully opt-in via an explicit class rather than being the default for all `<img>`s.
@@ -797,7 +773,6 @@ progress {
 .img-fluid {
   @include img-fluid();
 }
-
 
 // Image thumbnails
 .img-thumbnail {
@@ -821,7 +796,7 @@ progress {
 }
 
 .figure-img {
-  margin-bottom: $spacer * .5;
+  margin-bottom: $spacer * 0.5;
   line-height: 1;
 }
 
@@ -829,7 +804,6 @@ progress {
   @include font-size($figure-caption-font-size);
   color: $figure-caption-color;
 }
-
 
 // Container widths
 //
@@ -873,7 +847,6 @@ progress {
   }
 }
 
-
 // Row
 //
 // Rows contain your columns.
@@ -892,13 +865,15 @@ progress {
   .grid {
     display: grid;
     grid-template-rows: repeat(var(--#{$variable-prefix}rows, 1), 1fr);
-    grid-template-columns: repeat(var(--#{$variable-prefix}columns, #{$grid-columns}), 1fr);
+    grid-template-columns: repeat(
+      var(--#{$variable-prefix}columns, #{$grid-columns}),
+      1fr
+    );
     gap: var(--#{$variable-prefix}gap, #{$grid-gutter-width});
 
     @include make-cssgrid();
   }
 }
-
 
 // Columns
 //
@@ -907,7 +882,6 @@ progress {
 @if $enable-grid-classes {
   @include make-grid-columns();
 }
-
 
 //
 // Basic Bootstrap table
@@ -955,7 +929,6 @@ progress {
   }
 }
 
-
 //
 // Change placement of captions with a class
 //
@@ -963,7 +936,6 @@ progress {
 .caption-top {
   caption-side: top;
 }
-
 
 //
 // Condensed table w/ half padding
@@ -975,7 +947,6 @@ progress {
     padding: $table-cell-padding-y-sm $table-cell-padding-x-sm;
   }
 }
-
 
 // Border versions
 //
@@ -1014,7 +985,9 @@ progress {
 
 .table-striped {
   > tbody > tr:nth-of-type(#{$table-striped-order}) > * {
-    --#{$variable-prefix}table-accent-bg: var(--#{$variable-prefix}table-striped-bg);
+    --#{$variable-prefix}table-accent-bg: var(
+      --#{$variable-prefix}table-striped-bg
+    );
     color: var(--#{$variable-prefix}table-striped-color);
   }
 }
@@ -1024,7 +997,9 @@ progress {
 // The `.table-active` class can be added to highlight rows or cells
 
 .table-active {
-  --#{$variable-prefix}table-accent-bg: var(--#{$variable-prefix}table-active-bg);
+  --#{$variable-prefix}table-accent-bg: var(
+    --#{$variable-prefix}table-active-bg
+  );
   color: var(--#{$variable-prefix}table-active-color);
 }
 
@@ -1034,11 +1009,12 @@ progress {
 
 .table-hover {
   > tbody > tr:hover > * {
-    --#{$variable-prefix}table-accent-bg: var(--#{$variable-prefix}table-hover-bg);
+    --#{$variable-prefix}table-accent-bg: var(
+      --#{$variable-prefix}table-hover-bg
+    );
     color: var(--#{$variable-prefix}table-hover-color);
   }
 }
-
 
 // Table variants
 //
@@ -1064,7 +1040,6 @@ progress {
     }
   }
 }
-
 
 //
 // Labels
@@ -1103,7 +1078,6 @@ progress {
   @include font-size($input-font-size-sm);
 }
 
-
 //
 // Form text
 //
@@ -1115,7 +1089,6 @@ progress {
   font-weight: $form-text-font-weight;
   color: $form-text-color;
 }
-
 
 //
 // General form controls (plus a few specific high-level interventions)
@@ -1168,7 +1141,11 @@ progress {
   // TODO: we can remove this workaround once https://bugs.webkit.org/show_bug.cgi?id=198959 is resolved
   &::-webkit-date-and-time-value {
     // Multiply line-height by 1em if it has no unit
-    height: if(unit($input-line-height) == "", $input-line-height * 1em, $input-line-height);
+    height: if(
+      unit($input-line-height) == "",
+      $input-line-height * 1em,
+      $input-line-height
+    );
   }
 
   // Placeholder
@@ -1327,16 +1304,23 @@ textarea {
   }
 
   &::-moz-color-swatch {
-    height: if(unit($input-line-height) == "", $input-line-height * 1em, $input-line-height);
+    height: if(
+      unit($input-line-height) == "",
+      $input-line-height * 1em,
+      $input-line-height
+    );
     @include border-radius($input-border-radius);
   }
 
   &::-webkit-color-swatch {
-    height: if(unit($input-line-height) == "", $input-line-height * 1em, $input-line-height);
+    height: if(
+      unit($input-line-height) == "",
+      $input-line-height * 1em,
+      $input-line-height
+    );
     @include border-radius($input-border-radius);
   }
 }
-
 
 // Select
 //
@@ -1346,9 +1330,13 @@ textarea {
 .form-select {
   display: block;
   width: 100%;
-  padding: $form-select-padding-y $form-select-indicator-padding $form-select-padding-y $form-select-padding-x;
+  padding: $form-select-padding-y $form-select-indicator-padding
+    $form-select-padding-y $form-select-padding-x;
   // stylelint-disable-next-line property-no-vendor-prefix
-  -moz-padding-start: subtract($form-select-padding-x, 3px); // See https://github.com/twbs/bootstrap/issues/32636
+  -moz-padding-start: subtract(
+    $form-select-padding-x,
+    3px
+  ); // See https://github.com/twbs/bootstrap/issues/32636
   font-family: $form-select-font-family;
   @include font-size($form-select-font-size);
   font-weight: $form-select-font-weight;
@@ -1369,7 +1357,10 @@ textarea {
     border-color: $form-select-focus-border-color;
     outline: 0;
     @if $enable-shadows {
-      @include box-shadow($form-select-box-shadow, $form-select-focus-box-shadow);
+      @include box-shadow(
+        $form-select-box-shadow,
+        $form-select-focus-box-shadow
+      );
     } @else {
       // Avoid using mixin so we can pass custom focus shadow properly
       box-shadow: $form-select-focus-box-shadow;
@@ -1411,7 +1402,6 @@ textarea {
   @include border-radius($form-select-border-radius-lg);
 }
 
-
 //
 // Check/radio
 //
@@ -1431,7 +1421,7 @@ textarea {
 .form-check-input {
   width: $form-check-input-width;
   height: $form-check-input-width;
-  margin-top: ($line-height-base - $form-check-input-width) * .5; // line-height minus check height
+  margin-top: ($line-height-base - $form-check-input-width) * 0.5; // line-height minus check height
   vertical-align: top;
   background-color: $form-check-input-bg;
   background-repeat: no-repeat;
@@ -1467,7 +1457,8 @@ textarea {
 
     &[type="checkbox"] {
       @if $enable-gradients {
-        background-image: escape-svg($form-check-input-checked-bg-image), var(--#{$variable-prefix}gradient);
+        background-image: escape-svg($form-check-input-checked-bg-image),
+          var(--#{$variable-prefix}gradient);
       } @else {
         background-image: escape-svg($form-check-input-checked-bg-image);
       }
@@ -1475,7 +1466,8 @@ textarea {
 
     &[type="radio"] {
       @if $enable-gradients {
-        background-image: escape-svg($form-check-radio-checked-bg-image), var(--#{$variable-prefix}gradient);
+        background-image: escape-svg($form-check-radio-checked-bg-image),
+          var(--#{$variable-prefix}gradient);
       } @else {
         background-image: escape-svg($form-check-radio-checked-bg-image);
       }
@@ -1487,7 +1479,8 @@ textarea {
     border-color: $form-check-input-indeterminate-border-color;
 
     @if $enable-gradients {
-      background-image: escape-svg($form-check-input-indeterminate-bg-image), var(--#{$variable-prefix}gradient);
+      background-image: escape-svg($form-check-input-indeterminate-bg-image),
+        var(--#{$variable-prefix}gradient);
     } @else {
       background-image: escape-svg($form-check-input-indeterminate-bg-image);
     }
@@ -1537,7 +1530,8 @@ textarea {
       background-position: $form-switch-checked-bg-position;
 
       @if $enable-gradients {
-        background-image: escape-svg($form-switch-checked-bg-image), var(--#{$variable-prefix}gradient);
+        background-image: escape-svg($form-switch-checked-bg-image),
+          var(--#{$variable-prefix}gradient);
       } @else {
         background-image: escape-svg($form-switch-checked-bg-image);
       }
@@ -1565,7 +1559,6 @@ textarea {
   }
 }
 
-
 // Range
 //
 // Style range inputs the same across browsers. Vendor-specific rules for pseudo
@@ -1574,7 +1567,10 @@ textarea {
 
 .form-range {
   width: 100%;
-  height: add($form-range-thumb-height, $form-range-thumb-focus-box-shadow-width * 2);
+  height: add(
+    $form-range-thumb-height,
+    $form-range-thumb-focus-box-shadow-width * 2
+  );
   padding: 0; // Need to reset padding
   background-color: transparent;
   appearance: none;
@@ -1584,8 +1580,12 @@ textarea {
 
     // Pseudo-elements must be split across multiple rulesets to have an effect.
     // No box-shadow() mixin for focus accessibility.
-    &::-webkit-slider-thumb { box-shadow: $form-range-thumb-focus-box-shadow; }
-    &::-moz-range-thumb     { box-shadow: $form-range-thumb-focus-box-shadow; }
+    &::-webkit-slider-thumb {
+      box-shadow: $form-range-thumb-focus-box-shadow;
+    }
+    &::-moz-range-thumb {
+      box-shadow: $form-range-thumb-focus-box-shadow;
+    }
   }
 
   &::-moz-focus-outer {
@@ -1595,7 +1595,7 @@ textarea {
   &::-webkit-slider-thumb {
     width: $form-range-thumb-width;
     height: $form-range-thumb-height;
-    margin-top: ($form-range-track-height - $form-range-thumb-height) * .5; // Webkit specific
+    margin-top: ($form-range-track-height - $form-range-thumb-height) * 0.5; // Webkit specific
     @include gradient-bg($form-range-thumb-bg);
     border: $form-range-thumb-border;
     @include border-radius($form-range-thumb-border-radius);
@@ -1657,7 +1657,6 @@ textarea {
     }
   }
 }
-
 
 .form-floating {
   position: relative;
@@ -1723,7 +1722,6 @@ textarea {
   // stylelint-enable no-duplicate-selectors
 }
 
-
 //
 // Base styles
 //
@@ -1762,7 +1760,6 @@ textarea {
   }
 }
 
-
 // Textual addons
 //
 // Serves as a catch-all element for any text or radio/checkbox input you wish
@@ -1782,7 +1779,6 @@ textarea {
   border: $input-border-width solid $input-group-addon-border-color;
   @include border-radius($input-border-radius);
 }
-
 
 // Sizing
 //
@@ -1812,7 +1808,6 @@ textarea {
   padding-right: $form-select-padding-x + $form-select-indicator-padding;
 }
 
-
 // Rounded corners
 //
 // These rulesets must come after the sizing ones to properly override sm and lg
@@ -1837,7 +1832,13 @@ textarea {
 
   $validation-messages: "";
   @each $state in map-keys($form-validation-states) {
-    $validation-messages: $validation-messages + ":not(." + unquote($state) + "-tooltip)" + ":not(." + unquote($state) + "-feedback)";
+    $validation-messages: $validation-messages +
+      ":not(." +
+      unquote($state) +
+      "-tooltip)" +
+      ":not(." +
+      unquote($state) +
+      "-feedback)";
   }
 
   > :not(:first-child):not(.dropdown-menu)#{$validation-messages} {
@@ -1845,7 +1846,6 @@ textarea {
     @include border-start-radius(0);
   }
 }
-
 
 // Form validation
 //
@@ -1859,8 +1859,6 @@ textarea {
   @include form-validation-state($state, $data...);
 }
 // scss-docs-end form-validation-states-loop
-
-
 
 //
 // Base styles
@@ -1880,7 +1878,12 @@ textarea {
   user-select: none;
   background-color: transparent;
   border: $btn-border-width solid transparent;
-  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+  @include button-size(
+    $btn-padding-y,
+    $btn-padding-x,
+    $btn-font-size,
+    $btn-border-radius
+  );
   @include transition($btn-transition);
 
   &:hover {
@@ -1914,7 +1917,6 @@ textarea {
   }
 }
 
-
 //
 // Alternate buttons
 //
@@ -1932,7 +1934,6 @@ textarea {
   }
 }
 // scss-docs-end btn-variant-loops
-
 
 //
 // Link buttons
@@ -1961,19 +1962,27 @@ textarea {
   // No need for an active state here
 }
 
-
 //
 // Button Sizes
 //
 
 .btn-lg {
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+  @include button-size(
+    $btn-padding-y-lg,
+    $btn-padding-x-lg,
+    $btn-font-size-lg,
+    $btn-border-radius-lg
+  );
 }
 
 .btn-sm {
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+  @include button-size(
+    $btn-padding-y-sm,
+    $btn-padding-x-sm,
+    $btn-font-size-sm,
+    $btn-border-radius-sm
+  );
 }
-
 
 .fade {
   @include transition($transition-fade);
@@ -2002,7 +2011,6 @@ textarea {
   }
 }
 // scss-docs-end collapse-classes
-
 
 // The dropdown wrapper (`<div>`)
 .dropup,
@@ -2121,7 +2129,6 @@ textarea {
     }
   }
 }
-
 
 // Dividers (basically an `<hr>`) within the dropdown
 .dropdown-divider {
@@ -2308,17 +2315,20 @@ textarea {
 //
 // Remix the default button sizing classes into new ones for easier manipulation.
 
-.btn-group-sm > .btn { @extend .btn-sm; }
-.btn-group-lg > .btn { @extend .btn-lg; }
-
+.btn-group-sm > .btn {
+  @extend .btn-sm;
+}
+.btn-group-lg > .btn {
+  @extend .btn-lg;
+}
 
 //
 // Split button dropdowns
 //
 
 .dropdown-toggle-split {
-  padding-right: $btn-padding-x * .75;
-  padding-left: $btn-padding-x * .75;
+  padding-right: $btn-padding-x * 0.75;
+  padding-left: $btn-padding-x * 0.75;
 
   &::after,
   .dropup &::after,
@@ -2332,15 +2342,14 @@ textarea {
 }
 
 .btn-sm + .dropdown-toggle-split {
-  padding-right: $btn-padding-x-sm * .75;
-  padding-left: $btn-padding-x-sm * .75;
+  padding-right: $btn-padding-x-sm * 0.75;
+  padding-left: $btn-padding-x-sm * 0.75;
 }
 
 .btn-lg + .dropdown-toggle-split {
-  padding-right: $btn-padding-x-lg * .75;
-  padding-left: $btn-padding-x-lg * .75;
+  padding-right: $btn-padding-x-lg * 0.75;
+  padding-left: $btn-padding-x-lg * 0.75;
 }
-
 
 // The clickable button for toggling the menu
 // Set the same inset shadow as the :active state
@@ -2352,7 +2361,6 @@ textarea {
     @include box-shadow(none);
   }
 }
-
 
 //
 // Vertical button groups
@@ -2384,7 +2392,6 @@ textarea {
     @include border-top-radius(0);
   }
 }
-
 
 // Base class
 //
@@ -2464,7 +2471,6 @@ textarea {
   }
 }
 
-
 //
 // Pills
 //
@@ -2482,7 +2488,6 @@ textarea {
     @include gradient-bg($nav-pills-link-active-bg);
   }
 }
-
 
 //
 // Justified variants
@@ -2512,7 +2517,6 @@ textarea {
   }
 }
 
-
 // Tabbable tabs
 //
 // Hide tabbable panes to start, show them when `.active`
@@ -2526,7 +2530,6 @@ textarea {
   }
 }
 
-
 // Contents
 //
 // Navbar
@@ -2536,7 +2539,6 @@ textarea {
 // Responsive navbar
 // Navbar position
 // Navbar themes
-
 
 // Navbar
 //
@@ -2577,7 +2579,6 @@ textarea {
   }
 }
 
-
 // Navbar brand
 //
 // Used for brand, project, or site names.
@@ -2595,7 +2596,6 @@ textarea {
     text-decoration: if($link-hover-decoration == underline, none, null);
   }
 }
-
 
 // Navbar nav
 //
@@ -2618,7 +2618,6 @@ textarea {
   }
 }
 
-
 // Navbar text
 //
 //
@@ -2627,7 +2626,6 @@ textarea {
   padding-top: $nav-link-padding-y;
   padding-bottom: $nav-link-padding-y;
 }
-
 
 // Responsive navbar
 //
@@ -2807,7 +2805,7 @@ textarea {
 
     a,
     a:hover,
-    a:focus  {
+    a:focus {
       color: $navbar-light-active-color;
     }
   }
@@ -2863,7 +2861,6 @@ textarea {
   }
 }
 
-
 //
 // Base styles
 //
@@ -2895,7 +2892,7 @@ textarea {
       @include border-top-radius($card-inner-border-radius);
     }
 
-    &:last-child  {
+    &:last-child {
       border-bottom-width: 0;
       @include border-bottom-radius($card-inner-border-radius);
     }
@@ -2922,7 +2919,7 @@ textarea {
 }
 
 .card-subtitle {
-  margin-top: -$card-title-spacer-y * .5;
+  margin-top: -$card-title-spacer-y * 0.5;
   margin-bottom: 0;
 }
 
@@ -2952,7 +2949,9 @@ textarea {
   border-bottom: $card-border-width solid $card-border-color;
 
   &:first-child {
-    @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
+    @include border-radius(
+      $card-inner-border-radius $card-inner-border-radius 0 0
+    );
   }
 }
 
@@ -2963,19 +2962,20 @@ textarea {
   border-top: $card-border-width solid $card-border-color;
 
   &:last-child {
-    @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
+    @include border-radius(
+      0 0 $card-inner-border-radius $card-inner-border-radius
+    );
   }
 }
-
 
 //
 // Header navs
 //
 
 .card-header-tabs {
-  margin-right: -$card-cap-padding-x * .5;
+  margin-right: -$card-cap-padding-x * 0.5;
   margin-bottom: -$card-cap-padding-y;
-  margin-left: -$card-cap-padding-x * .5;
+  margin-left: -$card-cap-padding-x * 0.5;
   border-bottom: 0;
 
   @if $nav-tabs-link-active-bg != $card-bg {
@@ -2987,8 +2987,8 @@ textarea {
 }
 
 .card-header-pills {
-  margin-right: -$card-cap-padding-x * .5;
-  margin-left: -$card-cap-padding-x * .5;
+  margin-right: -$card-cap-padding-x * 0.5;
+  margin-left: -$card-cap-padding-x * 0.5;
 }
 
 // Card image
@@ -3017,7 +3017,6 @@ textarea {
 .card-img-bottom {
   @include border-bottom-radius($card-inner-border-radius);
 }
-
 
 //
 // Card groups
@@ -3080,7 +3079,6 @@ textarea {
     }
   }
 }
-
 
 //
 // Base styles
@@ -3177,7 +3175,6 @@ textarea {
   padding: $accordion-body-padding-y $accordion-body-padding-x;
 }
 
-
 // Flush accordion items
 //
 // Remove borders and border-radius to keep accordion items edge-to-edge.
@@ -3192,15 +3189,18 @@ textarea {
     border-left: 0;
     @include border-radius(0);
 
-    &:first-child { border-top: 0; }
-    &:last-child { border-bottom: 0; }
+    &:first-child {
+      border-top: 0;
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
 
     .accordion-button {
       @include border-radius(0);
     }
   }
 }
-
 
 .breadcrumb {
   display: flex;
@@ -3222,7 +3222,14 @@ textarea {
       float: left; // Suppress inline spacings and underlining of the separator
       padding-right: $breadcrumb-item-padding-x;
       color: $breadcrumb-divider-color;
-      content: var(--#{$variable-prefix}breadcrumb-divider, escape-svg($breadcrumb-divider)) #{"/* rtl:"} var(--#{$variable-prefix}breadcrumb-divider, escape-svg($breadcrumb-divider-flipped)) #{"*/"};
+      content: var(
+          --#{$variable-prefix}breadcrumb-divider,
+          escape-svg($breadcrumb-divider)
+        )
+        #{"/* rtl:"} var(
+          --#{$variable-prefix}breadcrumb-divider,
+          escape-svg($breadcrumb-divider-flipped)
+        ) #{"*/"};
     }
   }
 
@@ -3230,7 +3237,6 @@ textarea {
     color: $breadcrumb-active-color;
   }
 }
-
 
 .pagination {
   display: flex;
@@ -3283,21 +3289,33 @@ textarea {
   }
 }
 
-
 //
 // Sizing
 //
-@include pagination-size($pagination-padding-y, $pagination-padding-x, null, $pagination-border-radius);
+@include pagination-size(
+  $pagination-padding-y,
+  $pagination-padding-x,
+  null,
+  $pagination-border-radius
+);
 
 .pagination-lg {
-  @include pagination-size($pagination-padding-y-lg, $pagination-padding-x-lg, $font-size-lg, $pagination-border-radius-lg);
+  @include pagination-size(
+    $pagination-padding-y-lg,
+    $pagination-padding-x-lg,
+    $font-size-lg,
+    $pagination-border-radius-lg
+  );
 }
 
 .pagination-sm {
-  @include pagination-size($pagination-padding-y-sm, $pagination-padding-x-sm, $font-size-sm, $pagination-border-radius-sm);
+  @include pagination-size(
+    $pagination-padding-y-sm,
+    $pagination-padding-x-sm,
+    $font-size-sm,
+    $pagination-border-radius-sm
+  );
 }
-
-
 
 // Base class
 //
@@ -3329,7 +3347,6 @@ textarea {
   top: -1px;
 }
 
-
 //
 // Base styles
 //
@@ -3353,7 +3370,6 @@ textarea {
   font-weight: $alert-link-font-weight;
 }
 
-
 // Dismissible alerts
 //
 // Expand the right padding and account for the close button's positioning.
@@ -3371,7 +3387,6 @@ textarea {
   }
 }
 
-
 // scss-docs-start alert-modifiers
 // Generate contextual modifier classes for colorizing the alert.
 
@@ -3380,7 +3395,11 @@ textarea {
   $alert-border: shift-color($value, $alert-border-scale);
   $alert-color: shift-color($value, $alert-color-scale);
   @if (contrast-ratio($alert-background, $alert-color) < $min-contrast-ratio) {
-    $alert-color: mix($value, color-contrast($alert-background), abs($alert-color-scale));
+    $alert-color: mix(
+      $value,
+      color-contrast($alert-background),
+      abs($alert-color-scale)
+    );
   }
   .alert-#{$state} {
     @include alert-variant($alert-background, $alert-border, $alert-color);
@@ -3388,13 +3407,14 @@ textarea {
 }
 // scss-docs-end alert-modifiers
 
-
 // Disable animation if transitions are disabled
 
 // scss-docs-start progress-keyframes
 @if $enable-transitions {
   @keyframes progress-bar-stripes {
-    0% { background-position-x: $progress-height; }
+    0% {
+      background-position-x: $progress-height;
+    }
   }
 }
 // scss-docs-end progress-keyframes
@@ -3438,7 +3458,6 @@ textarea {
   }
 }
 
-
 // Base class
 //
 // Easily usable on <ul>, <ol>, or <div>.
@@ -3464,7 +3483,6 @@ textarea {
   }
 }
 
-
 // Interactive list items
 //
 // Use anchor or button elements instead of `li`s or `div`s to create interactive
@@ -3489,7 +3507,6 @@ textarea {
     background-color: $list-group-action-active-bg;
   }
 }
-
 
 // Individual list items
 //
@@ -3537,7 +3554,6 @@ textarea {
   }
 }
 
-
 // Horizontal
 //
 // Change the layout of list group items from vertical (default) to horizontal.
@@ -3578,7 +3594,6 @@ textarea {
   }
 }
 
-
 // Flush list items
 //
 // Remove borders and border-radius to keep list group items edge-to-edge. Most
@@ -3596,7 +3611,6 @@ textarea {
   }
 }
 
-
 // scss-docs-start list-group-modifiers
 // List group contextual variants
 //
@@ -3606,15 +3620,24 @@ textarea {
 @each $state, $value in $theme-colors {
   $list-group-variant-bg: shift-color($value, $list-group-item-bg-scale);
   $list-group-variant-color: shift-color($value, $list-group-item-color-scale);
-  @if (contrast-ratio($list-group-variant-bg, $list-group-variant-color) < $min-contrast-ratio) {
-    $list-group-variant-color: mix($value, color-contrast($list-group-variant-bg), abs($list-group-item-color-scale));
+  @if (
+    contrast-ratio($list-group-variant-bg, $list-group-variant-color) <
+      $min-contrast-ratio
+  ) {
+    $list-group-variant-color: mix(
+      $value,
+      color-contrast($list-group-variant-bg),
+      abs($list-group-item-color-scale)
+    );
   }
 
-  @include list-group-item-variant($state, $list-group-variant-bg, $list-group-variant-color);
+  @include list-group-item-variant(
+    $state,
+    $list-group-variant-bg,
+    $list-group-variant-color
+  );
 }
 // scss-docs-end list-group-modifiers
-
-
 
 // transparent background and border properties included for button version.
 // iOS requires the button element instead of an anchor tag.
@@ -3627,7 +3650,8 @@ textarea {
   height: $btn-close-height;
   padding: $btn-close-padding-y $btn-close-padding-x;
   color: $btn-close-color;
-  background: transparent escape-svg($btn-close-bg) center / $btn-close-width auto no-repeat; // include transparent for button elements
+  background: transparent escape-svg($btn-close-bg) center / $btn-close-width
+    auto no-repeat; // include transparent for button elements
   border: 0; // for button elements
   @include border-radius();
   opacity: $btn-close-opacity;
@@ -3656,8 +3680,6 @@ textarea {
 .btn-close-white {
   filter: $btn-close-white-filter;
 }
-
-
 
 .toast {
   width: $toast-max-width;
@@ -3698,10 +3720,12 @@ textarea {
   background-color: $toast-header-background-color;
   background-clip: padding-box;
   border-bottom: $toast-border-width solid $toast-header-border-color;
-  @include border-top-radius(subtract($toast-border-radius, $toast-border-width));
+  @include border-top-radius(
+    subtract($toast-border-radius, $toast-border-width)
+  );
 
   .btn-close {
-    margin-right: $toast-padding-x * -.5;
+    margin-right: $toast-padding-x * -0.5;
     margin-left: $toast-padding-x;
   }
 }
@@ -3711,13 +3735,10 @@ textarea {
   word-wrap: break-word;
 }
 
-
-
 // .modal-open      - body class for killing the scroll
 // .modal           - container to scroll within
 // .modal-dialog    - positioning shell for the actual modal
 // .modal-content   - actual modal w/ bg and corners and stuff
-
 
 // Container that the modal scrolls within
 .modal {
@@ -3800,7 +3821,11 @@ textarea {
 
 // Modal background
 .modal-backdrop {
-  @include overlay-backdrop($zindex-modal-backdrop, $modal-backdrop-bg, $modal-backdrop-opacity);
+  @include overlay-backdrop(
+    $zindex-modal-backdrop,
+    $modal-backdrop-bg,
+    $modal-backdrop-opacity
+  );
 }
 
 // Modal header
@@ -3815,8 +3840,9 @@ textarea {
   @include border-top-radius($modal-content-inner-border-radius);
 
   .btn-close {
-    padding: ($modal-header-padding-y * .5) ($modal-header-padding-x * .5);
-    margin: ($modal-header-padding-y * -.5) ($modal-header-padding-x * -.5) ($modal-header-padding-y * -.5) auto;
+    padding: ($modal-header-padding-y * 0.5) ($modal-header-padding-x * 0.5);
+    margin: ($modal-header-padding-y * -0.5) ($modal-header-padding-x * -0.5)
+      ($modal-header-padding-y * -0.5) auto;
   }
 }
 
@@ -3843,7 +3869,7 @@ textarea {
   flex-shrink: 0;
   align-items: center; // vertically center
   justify-content: flex-end; // Right align buttons with flex property because text-align doesn't work on flex items
-  padding: $modal-inner-padding - $modal-footer-margin-between * .5;
+  padding: $modal-inner-padding - $modal-footer-margin-between * 0.5;
   border-top: $modal-footer-border-width solid $modal-footer-border-color;
   @include border-bottom-radius($modal-content-inner-border-radius);
 
@@ -3851,7 +3877,7 @@ textarea {
   // This solution is far from ideal because of the universal selector usage,
   // but is needed to fix https://github.com/twbs/bootstrap/issues/24800
   > * {
-    margin: $modal-footer-margin-between * .5;
+    margin: $modal-footer-margin-between * 0.5;
   }
 }
 
@@ -3875,7 +3901,9 @@ textarea {
     @include box-shadow($modal-content-box-shadow-sm-up);
   }
 
-  .modal-sm { max-width: $modal-sm; }
+  .modal-sm {
+    max-width: $modal-sm;
+  }
 }
 
 @include media-breakpoint-up(lg) {
@@ -3886,7 +3914,9 @@ textarea {
 }
 
 @include media-breakpoint-up(xl) {
-  .modal-xl { max-width: $modal-xl; }
+  .modal-xl {
+    max-width: $modal-xl;
+  }
 }
 
 // scss-docs-start modal-fullscreen-loop
@@ -3923,8 +3953,6 @@ textarea {
 }
 // scss-docs-end modal-fullscreen-loop
 
-
-
 // Base class
 .tooltip {
   position: absolute;
@@ -3939,7 +3967,9 @@ textarea {
   word-wrap: break-word;
   opacity: 0;
 
-  &.show { opacity: $tooltip-opacity; }
+  &.show {
+    opacity: $tooltip-opacity;
+  }
 
   .tooltip-arrow {
     position: absolute;
@@ -3964,7 +3994,7 @@ textarea {
 
     &::before {
       top: -1px;
-      border-width: $tooltip-arrow-height ($tooltip-arrow-width * .5) 0;
+      border-width: $tooltip-arrow-height ($tooltip-arrow-width * 0.5) 0;
       border-top-color: $tooltip-arrow-color;
     }
   }
@@ -3980,7 +4010,8 @@ textarea {
 
     &::before {
       right: -1px;
-      border-width: ($tooltip-arrow-width * .5) $tooltip-arrow-height ($tooltip-arrow-width * .5) 0;
+      border-width: ($tooltip-arrow-width * 0.5) $tooltip-arrow-height
+        ($tooltip-arrow-width * 0.5) 0;
       border-right-color: $tooltip-arrow-color;
     }
   }
@@ -3994,7 +4025,7 @@ textarea {
 
     &::before {
       bottom: -1px;
-      border-width: 0 ($tooltip-arrow-width * .5) $tooltip-arrow-height;
+      border-width: 0 ($tooltip-arrow-width * 0.5) $tooltip-arrow-height;
       border-bottom-color: $tooltip-arrow-color;
     }
   }
@@ -4010,7 +4041,8 @@ textarea {
 
     &::before {
       left: -1px;
-      border-width: ($tooltip-arrow-width * .5) 0 ($tooltip-arrow-width * .5) $tooltip-arrow-height;
+      border-width: ($tooltip-arrow-width * 0.5) 0 ($tooltip-arrow-width * 0.5)
+        $tooltip-arrow-height;
       border-left-color: $tooltip-arrow-color;
     }
   }
@@ -4040,8 +4072,6 @@ textarea {
   background-color: $tooltip-bg;
   @include border-radius($tooltip-border-radius);
 }
-
-
 
 .popover {
   position: absolute;
@@ -4085,13 +4115,13 @@ textarea {
 
     &::before {
       bottom: 0;
-      border-width: $popover-arrow-height ($popover-arrow-width * .5) 0;
+      border-width: $popover-arrow-height ($popover-arrow-width * 0.5) 0;
       border-top-color: $popover-arrow-outer-color;
     }
 
     &::after {
       bottom: $popover-border-width;
-      border-width: $popover-arrow-height ($popover-arrow-width * .5) 0;
+      border-width: $popover-arrow-height ($popover-arrow-width * 0.5) 0;
       border-top-color: $popover-arrow-color;
     }
   }
@@ -4105,13 +4135,15 @@ textarea {
 
     &::before {
       left: 0;
-      border-width: ($popover-arrow-width * .5) $popover-arrow-height ($popover-arrow-width * .5) 0;
+      border-width: ($popover-arrow-width * 0.5) $popover-arrow-height
+        ($popover-arrow-width * 0.5) 0;
       border-right-color: $popover-arrow-outer-color;
     }
 
     &::after {
       left: $popover-border-width;
-      border-width: ($popover-arrow-width * .5) $popover-arrow-height ($popover-arrow-width * .5) 0;
+      border-width: ($popover-arrow-width * 0.5) $popover-arrow-height
+        ($popover-arrow-width * 0.5) 0;
       border-right-color: $popover-arrow-color;
     }
   }
@@ -4123,13 +4155,15 @@ textarea {
 
     &::before {
       top: 0;
-      border-width: 0 ($popover-arrow-width * .5) $popover-arrow-height ($popover-arrow-width * .5);
+      border-width: 0 ($popover-arrow-width * 0.5) $popover-arrow-height
+        ($popover-arrow-width * 0.5);
       border-bottom-color: $popover-arrow-outer-color;
     }
 
     &::after {
       top: $popover-border-width;
-      border-width: 0 ($popover-arrow-width * .5) $popover-arrow-height ($popover-arrow-width * .5);
+      border-width: 0 ($popover-arrow-width * 0.5) $popover-arrow-height
+        ($popover-arrow-width * 0.5);
       border-bottom-color: $popover-arrow-color;
     }
   }
@@ -4141,7 +4175,7 @@ textarea {
     left: 50%;
     display: block;
     width: $popover-arrow-width;
-    margin-left: -$popover-arrow-width * .5;
+    margin-left: -$popover-arrow-width * 0.5;
     content: "";
     border-bottom: $popover-border-width solid $popover-header-bg;
   }
@@ -4155,13 +4189,15 @@ textarea {
 
     &::before {
       right: 0;
-      border-width: ($popover-arrow-width * .5) 0 ($popover-arrow-width * .5) $popover-arrow-height;
+      border-width: ($popover-arrow-width * 0.5) 0 ($popover-arrow-width * 0.5)
+        $popover-arrow-height;
       border-left-color: $popover-arrow-outer-color;
     }
 
     &::after {
       right: $popover-border-width;
-      border-width: ($popover-arrow-width * .5) 0 ($popover-arrow-width * .5) $popover-arrow-height;
+      border-width: ($popover-arrow-width * 0.5) 0 ($popover-arrow-width * 0.5)
+        $popover-arrow-height;
       border-left-color: $popover-arrow-color;
     }
   }
@@ -4201,7 +4237,6 @@ textarea {
   padding: $popover-body-padding-y $popover-body-padding-x;
   color: $popover-body-color;
 }
-
 
 // Notes on the classes:
 //
@@ -4260,7 +4295,6 @@ textarea {
 
 /* rtl:end:ignore */
 
-
 //
 // Alternate transitions
 //
@@ -4286,7 +4320,6 @@ textarea {
     @include transition(opacity 0s $carousel-transition-duration);
   }
 }
-
 
 //
 // Left/right controls for nav
@@ -4322,11 +4355,19 @@ textarea {
 }
 .carousel-control-prev {
   left: 0;
-  background-image: if($enable-gradients, linear-gradient(90deg, rgba($black, .25), rgba($black, .001)), null);
+  background-image: if(
+    $enable-gradients,
+    linear-gradient(90deg, rgba($black, 0.25), rgba($black, 0.001)),
+    null
+  );
 }
 .carousel-control-next {
   right: 0;
-  background-image: if($enable-gradients, linear-gradient(270deg, rgba($black, .25), rgba($black, .001)), null);
+  background-image: if(
+    $enable-gradients,
+    linear-gradient(270deg, rgba($black, 0.25), rgba($black, 0.001)),
+    null
+  );
 }
 
 // Icons for within
@@ -4400,16 +4441,15 @@ textarea {
   }
 }
 
-
 // Optional captions
 //
 //
 
 .carousel-caption {
   position: absolute;
-  right: (100% - $carousel-caption-width) * .5;
+  right: (100% - $carousel-caption-width) * 0.5;
   bottom: $carousel-caption-spacer;
-  left: (100% - $carousel-caption-width) * .5;
+  left: (100% - $carousel-caption-width) * 0.5;
   padding-top: $carousel-caption-padding-y;
   padding-bottom: $carousel-caption-padding-y;
   color: $carousel-caption-color;
@@ -4433,15 +4473,15 @@ textarea {
   }
 }
 
-
-
 //
 // Rotating border
 //
 
 // scss-docs-start spinner-border-keyframes
 @keyframes spinner-border {
-  to { transform: rotate(360deg) #{"/* rtl:ignore */"}; }
+  to {
+    transform: rotate(360deg) #{"/* rtl:ignore */"};
+  }
 }
 // scss-docs-end spinner-border-keyframes
 
@@ -4505,8 +4545,6 @@ textarea {
   }
 }
 
-
-
 .offcanvas {
   position: fixed;
   bottom: 0;
@@ -4524,7 +4562,11 @@ textarea {
 }
 
 .offcanvas-backdrop {
-  @include overlay-backdrop($zindex-offcanvas-backdrop, $offcanvas-backdrop-bg, $offcanvas-backdrop-opacity);
+  @include overlay-backdrop(
+    $zindex-offcanvas-backdrop,
+    $offcanvas-backdrop-bg,
+    $offcanvas-backdrop-opacity
+  );
 }
 
 .offcanvas-header {
@@ -4534,10 +4576,10 @@ textarea {
   padding: $offcanvas-padding-y $offcanvas-padding-x;
 
   .btn-close {
-    padding: ($offcanvas-padding-y * .5) ($offcanvas-padding-x * .5);
-    margin-top: $offcanvas-padding-y * -.5;
-    margin-right: $offcanvas-padding-x * -.5;
-    margin-bottom: $offcanvas-padding-y * -.5;
+    padding: ($offcanvas-padding-y * 0.5) ($offcanvas-padding-x * 0.5);
+    margin-top: $offcanvas-padding-y * -0.5;
+    margin-right: $offcanvas-padding-x * -0.5;
+    margin-bottom: $offcanvas-padding-y * -0.5;
   }
 }
 
@@ -4591,8 +4633,6 @@ textarea {
   transform: none;
 }
 
-
-
 .placeholder {
   display: inline-block;
   min-height: 1em;
@@ -4609,11 +4649,11 @@ textarea {
 
 // Sizing
 .placeholder-xs {
-  min-height: .6em;
+  min-height: 0.6em;
 }
 
 .placeholder-sm {
-  min-height: .8em;
+  min-height: 0.8em;
 }
 
 .placeholder-lg {
@@ -4634,7 +4674,12 @@ textarea {
 }
 
 .placeholder-wave {
-  mask-image: linear-gradient(130deg, $black 55%, rgba(0, 0, 0, (1 - $placeholder-opacity-min)) 75%, $black 95%);
+  mask-image: linear-gradient(
+    130deg,
+    $black 55%,
+    rgba(0, 0, 0, (1 - $placeholder-opacity-min)) 75%,
+    $black 95%
+  );
   mask-size: 200% 100%;
   animation: placeholder-wave 2s linear infinite;
 }
@@ -4660,12 +4705,15 @@ textarea {
     @if $link-shade-percentage != 0 {
       &:hover,
       &:focus {
-        color: if(color-contrast($value) == $color-contrast-light, shade-color($value, $link-shade-percentage), tint-color($value, $link-shade-percentage));
+        color: if(
+          color-contrast($value) == $color-contrast-light,
+          shade-color($value, $link-shade-percentage),
+          tint-color($value, $link-shade-percentage)
+        );
       }
     }
   }
 }
-
 
 // Ratio
 // Credit: Nicolas Gallagher and SUIT CSS.
@@ -4694,7 +4742,6 @@ textarea {
     --#{$variable-prefix}aspect-ratio: #{$ratio};
   }
 }
-
 
 // Position
 // Shorthand
@@ -4728,7 +4775,6 @@ textarea {
   }
 }
 
-
 // scss-docs-start stacks
 .hstack {
   display: flex;
@@ -4745,8 +4791,6 @@ textarea {
 }
 // scss-docs-end stacks
 
-
-
 //
 // Visually hidden
 //
@@ -4755,8 +4799,6 @@ textarea {
 .visually-hidden-focusable:not(:focus):not(:focus-within) {
   @include visually-hidden();
 }
-
-
 
 //
 // Stretched link
@@ -4774,7 +4816,6 @@ textarea {
   }
 }
 
-
 //
 // Text truncation
 //
@@ -4782,7 +4823,6 @@ textarea {
 .text-truncate {
   @include text-truncate();
 }
-
 
 .vr {
   display: inline-block;
@@ -4793,13 +4833,8 @@ textarea {
   opacity: $hr-opacity;
 }
 
-
-
-
-
 // Loop over each breakpoint
 @each $breakpoint in map-keys($grid-breakpoints) {
-
   // Generate media query if needed
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
@@ -4808,7 +4843,10 @@ textarea {
     @each $key, $utility in $utilities {
       // The utility can be disabled with `false`, thus check if the utility is a map first
       // Only proceed if responsive media queries are enabled or if it's the base media query
-      @if type-of($utility) == "map" and (map-get($utility, responsive) or $infix == "") {
+      @if type-of($utility) ==
+        "map" and
+        (map-get($utility, responsive) or $infix == "")
+      {
         @include generate-utility($utility, $infix);
       }
     }
@@ -4825,14 +4863,17 @@ textarea {
       @each $key, $utility in $utilities {
         // The utility can be disabled with `false`, thus check if the utility is a map first
         // Only proceed if responsive media queries are enabled or if it's the base media query
-        @if type-of($utility) == "map" and map-get($utility, rfs) and (map-get($utility, responsive) or $infix == "") {
+        @if type-of($utility) ==
+          "map" and
+          map-get($utility, rfs) and
+          (map-get($utility, responsive) or $infix == "")
+        {
           @include generate-utility($utility, $infix, true);
         }
       }
     }
   }
 }
-
 
 // Print utilities
 @media print {
@@ -4844,5 +4885,3 @@ textarea {
     }
   }
 }
-
-
