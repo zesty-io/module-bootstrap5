@@ -67,14 +67,14 @@ $colors: (
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary: $primary !default;
-$secondary: $secondary !default;
-$success: $accent1-color !default;
-$info: $accent2-color !default;
-$warning: $yellow !default;
-$danger: $red !default;
-$light: $light !default;
-$dark: $dark !default;
+$primary: $primary-color !default;
+$secondary: $secondary-color !default;
+$success: $success-color !default;
+$info: $info-color !default;
+$warning: $warning-color !default;
+$danger: $danger-color !default;
+$light: $light-color !default;
+$dark: $dark-color !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -460,12 +460,15 @@ $utilities-bg-colors: map-loop(
 //
 // Style anchor elements.
 
-$link-color: map-get($theme-colors , $link-custom-color ) !default;
-$link-hover-custom: map-get($theme-colors , $link-hover-custom-color ) !default;
+$link-color: map-get($theme-colors, $link-custom-color) !default;
+$link-hover-custom: map-get($theme-colors, $link-hover-custom-color) !default;
 
 $link-decoration: underline !default;
 $link-shade-percentage: 20% !default;
-$link-hover-color: shift-color($link-hover-custom, $link-shade-percentage) !default;
+$link-hover-color: shift-color(
+  $link-hover-custom,
+  $link-shade-percentage
+) !default;
 $link-hover-decoration: null !default;
 
 $stretched-link-pseudo-element: after !default;

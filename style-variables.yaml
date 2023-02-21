@@ -1,97 +1,113 @@
-
-  - referenceName: "primary"
-    name: "Primary"
-    sort: 1
-    type: "color"
-    value: "#fddd0d"
-    description: "A theme color with a class name: primary e.g(text-primary,bg-primary)"
-    category: 1
-    options: null
-  - referenceName: "headings-custom-color"
-    name: "Header Color"
-    sort: 1
-    type: "dropdown"
-    value: "primary"
-    description: "This is the color used for all Header elements"
-    category: 2
-    options: "{\"accent1-color\":\"Accent 1\",\"accent2-color\":\"Accent 2\",\"dark\":\"Dark\",\"light\":\"Light\",\"primary\":\"Primary\",\"secondary\":\"Secondary\"}"
-  - referenceName: "link-custom-color"
-    name: "Link Color"
-    sort: 1
-    type: "dropdown"
-    value: "primary"
-    description: "Color of every link in the page"
-    category: 3
-    options: "{\"accent1-color\":\"Accent 1\",\"accent2-color\":\"Accent 2\",\"dark\":\"Dark\",\"light\":\"Light\",\"primary\":\"Primary\",\"secondary\":\"Secondary\"}"
-  - referenceName: "secondary"
-    name: "Secondary"
-    sort: 2
-    type: "color"
-    value: "#6c757d"
-    description: "A theme color with a class name: secondary e.g(text-secondary,bg-secondary)"
-    category: 1
-    options: null
-  - referenceName: "font-size-base"
-    name: "Font Size Base"
-    sort: 2
-    type: "text"
-    value: "1rem"
-    description: "Base font size of all text in every web page of the instance"
-    category: 2
-    options: null
-  - referenceName: "font-weight-base"
-    name: "Font Weight Base"
-    sort: 2
-    type: "text"
-    value: "400"
-    description: "Base font weight of all text, the higher value the more thicker of the text"
-    category: 2
-    options: null
-  - referenceName: "link-hover-custom-color"
-    name: "Link Hover Color"
-    sort: 2
-    type: "dropdown"
-    value: "accent2-color"
-    description: "Color of the link when mouse is hovered"
-    category: 3
-    options: "{\"accent1-color\":\"Accent 1\",\"accent2-color\":\"Accent 2\",\"dark\":\"Dark\",\"light\":\"Light\",\"primary\":\"Primary\",\"secondary\":\"Secondary\"}"
-  - referenceName: "accent1-color"
-    name: "Accent 1"
-    sort: 3
-    type: "color"
-    value: "#198754"
-    description: "A theme color with a class name: success e.g(text-success,bg-success)"
-    category: 1
-    options: null
-  - referenceName: "font-family-base"
-    name: "Font Family Base"
-    sort: 3
-    type: "font_picker"
-    value: "Open Sans:400"
-    description: "Base font style of all text"
-    category: 2
-    options: null
-  - referenceName: "accent2-color"
-    name: "Accent 2"
-    sort: 4
-    type: "color"
-    value: "#262527"
-    description: "A theme color with a class name: info e.g(text-info,bg-info)"
-    category: 1
-    options: null
-  - referenceName: "light"
-    name: "Light"
-    sort: 7
-    type: "color"
-    value: "#f8f9fa"
-    description: "A theme color with a class name: light e.g(text-light,bg-light)"
-    category: 1
-    options: null
-  - referenceName: "dark"
-    name: "Dark"
-    sort: 8
-    type: "color"
-    value: "#212529"
-    description: "A theme color with a class name: dark e.g(text-dark,bg-dark)"
-    category: 1
-    options: null
+- referenceName: "primary-color"
+  name: "Primary Color"
+  sort: 1
+  type: "color"
+  value: "#0d6efd "
+  description: "A theme color with a class name: primary e.g(text-primary,bg-primary)"
+  category: 1
+  options: null
+- referenceName: "headings-custom-color"
+  name: "Header Color"
+  sort: 1
+  type: "dropdown"
+  value: "primary"
+  description: "This is the color used for all Header elements"
+  category: 2
+  options: '{"success":"Success","info":"Info","dark":"Dark","light":"Light","primary":"Primary","secondary":"Secondary"}'
+- referenceName: "link-custom-color"
+  name: "Link Color"
+  sort: 1
+  type: "dropdown"
+  value: "primary"
+  description: "Color of every link in the page"
+  category: 3
+  options: '{"success":"Success","info":"Info","dark":"Dark","light":"Light","primary":"Primary","secondary":"Secondary"}'
+- referenceName: "secondary-color"
+  name: "Secondary Color"
+  sort: 2
+  type: "color"
+  value: "#6c757d"
+  description: "A theme color with a class name: secondary e.g(text-secondary,bg-secondary)"
+  category: 1
+  options: null
+- referenceName: "font-size-base"
+  name: "Font Size Base"
+  sort: 2
+  type: "text"
+  value: "1rem"
+  description: "Base font size of all text in every web page of the instance"
+  category: 2
+  options: null
+- referenceName: "font-weight-base"
+  name: "Font Weight Base"
+  sort: 2
+  type: "text"
+  value: "400"
+  description: "Base font weight of all text, the higher value the more thicker of the text"
+  category: 2
+  options: null
+- referenceName: "link-hover-custom-color"
+  name: "Link Hover Color"
+  sort: 2
+  type: "dropdown"
+  value: "info"
+  description: "Color of the link when mouse is hovered"
+  category: 3
+  options: '{"success":"Success","info":"Info","dark":"Dark","light":"Light","primary":"Primary","secondary":"Secondary"}'
+- referenceName: "success-color"
+  name: "Success Color"
+  sort: 3
+  type: "color"
+  value: "#198754"
+  description: "A theme color with a class name: success e.g(text-success,bg-success)"
+  category: 1
+  options: null
+- referenceName: "font-family-base"
+  name: "Font Family Base"
+  sort: 3
+  type: "font_picker"
+  value: "Open Sans:400"
+  description: "Base font style of all text"
+  category: 2
+  options: null
+- referenceName: "info-color"
+  name: "Info Color"
+  sort: 4
+  type: "color"
+  value: "#0dcaf0 "
+  description: "A theme color with a class name: info e.g(text-info,bg-info)"
+  category: 1
+  options: null
+  referenceName: "warning-color"
+  name: "Warning Color"
+  sort: 5
+  type: "color"
+  value: "#ffc107"
+  description: "A theme color with a class name: dark e.g(text-warning,bg-warning)"
+  category: 1
+  options: null
+  referenceName: "danger-color"
+  name: "Danger Color"
+  sort: 6
+  type: "color"
+  value: "#dc3545"
+  description: "A theme color with a class name: dark e.g(text-danger,bg-danger)"
+  category: 1
+  options: null
+- referenceName: "light-color"
+  name: "Light Color"
+  sort: 7
+  type: "color"
+  value: "#f8f9fa"
+  description: "A theme color with a class name: light e.g(text-light,bg-light)"
+  category: 1
+  options: null
+- referenceName: "dark-color"
+  name: "Dark Color"
+  sort: 8
+  type: "color"
+  value: "#212529"
+  description: "A theme color with a class name: dark e.g(text-dark,bg-dark)"
+  category: 1
+  options: null
+  
