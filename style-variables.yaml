@@ -7,7 +7,7 @@
     description: "A theme color with a class name: primary e.g(text-primary,bg-primary)"
     category: 1
     options: null
-  - referenceName: "headings-color"
+  - referenceName: "headings-theme-color"
     name: "Header Color"
     sort: 1
     type: "dropdown"
