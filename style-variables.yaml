@@ -30,7 +30,7 @@
   description: "A theme color with a class name: secondary e.g(text-secondary,bg-secondary)"
   category: 1
   options: null
-- referenceName: "font-size-base"
+- referenceName: "font-size-base-custom"
   name: "Font Size Base"
   sort: 2
   type: "text"
@@ -38,7 +38,7 @@
   description: "Base font size of all text in every web page of the instance"
   category: 2
   options: null
-- referenceName: "font-weight-base"
+- referenceName: "font-weight-base-custom"
   name: "Font Weight Base"
   sort: 2
   type: "text"
@@ -62,7 +62,7 @@
   description: "A theme color with a class name: success e.g(text-success,bg-success)"
   category: 1
   options: null
-- referenceName: "font-family-base"
+- referenceName: "font-family-base-custom"
   name: "Font Family Base"
   sort: 3
   type: "font_picker"
