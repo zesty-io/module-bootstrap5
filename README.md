@@ -23,7 +23,7 @@ _What is Style Variables?_
 
 _What are the current available sections?_
 ### 1. Body Colors & Spacing
-> The bootstrap theme colors:`Primary` `Secondary` `Light` `Dark` can be customized in this section using Color Picker. Color such as: `Accent1` `Accent2` are the style variables for Theme Colors **Success** and **Info**
+> The bootstrap theme colors: `Primary` `Secondary` `Success` `Info` `Warning` `Danger` `Light` `Dark` can be customized in this section using Color Picker.
 
 <img src="https://user-images.githubusercontent.com/55866499/217267661-e4d32bd6-e63f-45f6-9eb0-c90ad779a8de.png" width="100%" height="400">
  
